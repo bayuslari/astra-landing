@@ -16,44 +16,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="landing">
+<body class="edit-page">
     <div class="main">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-5 offset-md-7">
-                    <form class="form-welcome" action="#">
+                <div class="col-md-6 offset-md-3">
+                    <form class="form-edit white-wrapper" action="#">
+                        <h3 class="title-content">Edit Data</h3>
                         <div class="form-top">
-                            <img src="img/logo-astra.png" class="brand-logo" alt="">
-                            <h4 class="short-desc">Selamat Datang di Genba Bisnis Unit Grup Astra 2017</h4>
                             <div class="form-group">
-                                <select class="form-control" id="form-name" >
-                                    <option selected>Nama</option>
-                                    <option>Bayu</option>
-                                    <option>Yanuar</option>
-                                    <option>Fajar</option>
-                                </select>
+                                <input type="text" class="form-control" id="form-name" placeholder="Nama" value="Bayus">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="form-company" placeholder="Perusahaan">
+                                <input type="text" class="form-control" id="form-company" placeholder="Perusahaan" value="Softwareseni">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="form-registrasi" >
-                                    <option selected>Kode Registrasi</option>
-                                    <option>12345</option>
-                                    <option>54321</option>
-                                    <option>45321</option>
-                                </select>
+                                <input type="text" class="form-control" id="form-registrasi" placeholder="Kode Registrasi" value="123123">
                             </div>
                         </div>
                         <div class="form-bottom d-flex justify-content-between">
-                            <button type="submit" class="btn btn-custom">Daftar</button>
-                            <img src="img/seva-id.png" class="img-seva" alt="">
+                            <button type="submit" data-toggle="modal" data-target="#modal-success" class="btn btn-custom">Save</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-success" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>You're ready to launch!</h3>
+                <img class="icon-modal-success" src="img/checklist.svg" alt="">
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
@@ -61,21 +61,6 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script>
-    $(document).ready(function() {
-    	$('select').select2();
-	});
-
-	$(".form-welcome").validate({
-	  ignore: [],       
-	  rules: {
-	    //Rules
-	  },
-	  messages: {
-	    //messages
-	  }
-	});
-    </script>
 </body>
 
 </html>
