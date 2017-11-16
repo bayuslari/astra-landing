@@ -34,10 +34,10 @@ body {
     }
 }
 
-.landing .main .container,
-.landing .main .row,
-.edit-page .main .container,
-.edit-page .main .row  {
+.landing > .main > .container,
+.landing > .main > .container > .row,
+.edit-page > .main > .container,
+.edit-page > .main > .container > .row {
     min-height: 100vh;
 }
 
@@ -91,9 +91,9 @@ input.form-control {
 }
 
 .brand-logo {
-    margin-bottom: 45px;
-    max-width: 250px;
-    height: auto;
+    margin-bottom: 30px;
+    object-fit: contain;
+    height: 65px;
     width: 100%;
 }
 
@@ -116,6 +116,7 @@ input.form-control {
 .title-content {
     margin-bottom: 30px;
 }
+
 
 
 
@@ -157,6 +158,11 @@ input.form-control {
     color: #495057 !important;
 }
 
+form label.error {
+    display: none;
+    margin: 5px 0 0;
+    color: red;
+}
 
 
 /* Search page */
@@ -206,7 +212,9 @@ div.dataTables_wrapper div.dataTables_filter input {
     color: #4CAF50;
 }
 
+
 /* Success Modal */
+
 #modal-success .modal-body {
     padding: 90px;
     text-align: center;

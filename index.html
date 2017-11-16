@@ -23,31 +23,40 @@
                 <div class="col-md-5 offset-md-7">
                     <form class="form-welcome" action="#">
                         <div class="form-top">
-                            <img src="img/logo-astra.png" class="brand-logo" alt="">
+                        	<div class="row">
+                        		<div class="col-md-6">
+                        			<img src="img/logo-astra.png" class="brand-logo" alt="">
+                        		</div>
+                        		<div class="col-md-6">
+                        			<img src="img/logosatu.png" class="brand-logo" alt="">
+                        		</div>
+                        	</div>
+                            
                             <h4 class="short-desc">Selamat Datang di Genba Bisnis Unit Grup Astra 2017</h4>
                             <div class="form-group">
-                                <select class="form-control" id="form-name" >
+                                <select class="form-control" id="form-name" name="formName" for="formName">
                                     <option selected>Nama</option>
                                     <option>Bayu</option>
                                     <option>Yanuar</option>
                                     <option>Fajar</option>
                                 </select>
+                                <label for="form-name" generated="true" class="error"></label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="form-company" placeholder="Perusahaan">
+                                <input type="text" class="form-control" name="formCompany" id="form-company" placeholder="Perusahaan">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="form-registrasi" >
+                                <select class="form-control" id="form-registrasi" name="formRegistrasi">
                                     <option selected>Kode Registrasi</option>
                                     <option>12345</option>
                                     <option>54321</option>
                                     <option>45321</option>
                                 </select>
+                                <label for="form-registrasi" generated="true" class="error"></label>
                             </div>
                         </div>
-                        <div class="form-bottom d-flex justify-content-between">
+                        <div class="form-bottom">
                             <button type="submit" class="btn btn-custom">Daftar</button>
-                            <img src="img/seva-id.png" class="img-seva" alt="">
                         </div>
                     </form>
                 </div>
@@ -63,18 +72,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function() {
-    	$('select').select2();
-	});
+        $('select').select2();
+    });
 
-	$(".form-welcome").validate({
-	  ignore: [],       
-	  rules: {
-	    //Rules
-	  },
-	  messages: {
-	    //messages
-	  }
-	});
+    $(function() {
+        $(".form-welcome").validate({
+        	ignore: [], 
+            // Specify validation rules
+            rules: {
+                // The key name on the left side is the name attribute
+                // of an input field. Validation rules are defined
+                // on the right side
+                formName: {
+                    required: true,
+					minlength: 3,
+                },
+                formCompany: {
+                    required: true,
+                },
+                formRegistrasi: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 24
+                },
+            },
+            // Specify validation error messages
+            messages: {
+                formName: "Please enter your name",
+                formCompany: "Please enter your company name",
+                formRegistrasi: "Please enter your registration code",
+            },
+            // Make sure the form is submitted to the destination defined
+            // in the "action" attribute of the form when valid
+            submitHandler: function(form) {
+                form.submit();
+                return false;
+            }
+        });
+    });
     </script>
 </body>
 
