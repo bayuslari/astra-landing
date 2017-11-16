@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+    color: #505050;
+}
+
+
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+        max-width: 100%;
+    }
+}
+
+.main .container,
+.main .row {
+    height: 100%;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.main {
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-welcome {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.short-desc {
+    font-size: 20px;
+    color: #505050;
+}
+
+input.form-control {
+    background-color: #dedeea;
+}
+
+.btn-custom {
+    background: #4a5872;
+    text-transform: uppercase;
+    font-size: 1rem;
+    min-width: 150px;
+    color: #e2e6ec;
+    letter-spacing: .4px;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background: #384358;
+}
