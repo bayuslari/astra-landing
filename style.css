@@ -34,10 +34,10 @@ body {
     }
 }
 
-.landing > .main > .container,
-.landing > .main > .container > .row,
-.edit-page > .main > .container,
-.edit-page > .main > .container > .row {
+.landing>.main>.container,
+.landing>.main>.container>.row,
+.edit-page>.main>.container,
+.edit-page>.main>.container>.row {
     min-height: 100vh;
 }
 
@@ -120,6 +120,8 @@ input.form-control {
 
 
 
+
+
 /* Select2 and Form */
 
 .select2-container--default .select2-selection--single {
@@ -163,6 +165,22 @@ form label.error {
     margin: 5px 0 0;
     color: red;
 }
+
+.btn-cancel {
+    background: #ffffff;
+    color: #495057;
+    border: 1px solid;
+}
+
+.btn-cancel:hover {
+    color: #fff;
+}
+
+.btn-custom+.btn-custom {
+    margin-left: 10px;
+}
+
+
 
 
 /* Search page */
@@ -213,6 +231,8 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 
 
+
+
 /* Success Modal */
 
 #modal-success .modal-body {
@@ -241,4 +261,68 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 .modal-content {
     border-radius: 20px;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .form-welcome {
+        padding: 30px;
+    }
+
+    .btn-custom {
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+    }
+
+    .landing .form-welcome {
+        margin: 30px 0;
+    }
+    .btn-custom+.btn-custom {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    #table-search_wrapper {
+        padding: 0;
+        overflow: scroll;
+    }
+    .search-page .title-content {
+        margin-bottom: 15px;
+    }
+    div.dataTables_wrapper div.dataTables_filter input {
+        padding-right: 0;
+        margin-left: 0;
+    }
+
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: left;
+    }
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: start;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    .landing .form-welcome,
+    .edit-page .form-edit {
+        margin: 30px;
+    }
+    .main,
+    .landing>.main>.container,
+    .landing>.main>.container>.row,
+    .edit-page>.main>.container,
+    .edit-page>.main>.container>.row {
+        min-height: 100%;
+    }
 }
